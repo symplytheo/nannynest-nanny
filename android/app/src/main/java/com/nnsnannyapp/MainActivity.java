@@ -1,8 +1,12 @@
 package com.nnsnannyapp;
+// for react-native-screens [react native navigation ependeny]
+import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+// For RNSplashScreen
+import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
@@ -13,6 +17,21 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "nnsNannyApp";
+  }
+
+   /**
+   * For RNSplashScreen
+   */
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this, R.style.SplashTheme, true);
+        super.onCreate(savedInstanceState);
+    }
+
+  // for react-native-screens
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 
   /**
