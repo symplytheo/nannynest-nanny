@@ -7,5 +7,8 @@
         <!-- force light mode -->
         <item name="android:forceDarkAllowed">false</item>
     </style>
-
+    <style name="SplashTheme" parent="SplashScreen_SplashTheme">
+        <item name="colorPrimaryDark">#CC5295</item>
+    </style>
+    
 </resources>

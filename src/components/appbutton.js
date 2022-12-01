@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Button, useTheme} from 'react-native-paper';
+import { Button, useTheme } from 'react-native-paper';
 
 const AppButton = ({
   mode,
@@ -29,8 +29,8 @@ const AppButton = ({
       textColor={textColor}
       icon={icon}
       uppercase={false}
-      theme={{roundness: 2, ...theme}}
-      contentStyle={{height: 52, ...contentStyle}}
+      theme={{ roundness: 2, ...theme }}
+      contentStyle={{ height: 52, ...contentStyle }}
       labelStyle={{
         ...appTheme.fonts.labelSmall,
         fontFamily: 'Montserrat-SemiBold',
