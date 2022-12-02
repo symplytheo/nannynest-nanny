@@ -1,19 +1,58 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Appbar, FAB } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
+import { Colors } from '../styles/colors';
 import OnboardingScreen from '../screen/onboarding';
 import AppSplashScreen from '../screen/splash';
+import AuthPhoneNumberScreen from '../screen/auth/phone_number';
+import AuthOtpScreen from '../screen/auth/otp';
+import AuthSocialAccount from '../screen/auth/social_account';
+import AuthProfileScreen from '../screen/auth/profile';
+import AuthKycScreen from '../screen/auth/kyc';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="dashboard">
+    <Stack.Navigator initialRouteName="welcome">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
       </Stack.Group>
+
+      <Stack.Group
+        screenOptions={{
+          header: ({ navigation, back, options }) => (
+            <Appbar.Header style={styles.header}>
+              {back ? (
+                <FAB
+                  customSize={48}
+                  mode="flat"
+                  icon="arrow-left"
+                  style={styles.fab}
+                  onPress={navigation.goBack}
+                />
+              ) : null}
+              <Appbar.Content title={options.title} titleStyle={styles.title} />
+            </Appbar.Header>
+          ),
+          headerTitle: null,
+        }}>
+        <Stack.Screen name="auth-phone" component={AuthPhoneNumberScreen} />
+        <Stack.Screen name="auth-otp" component={AuthOtpScreen} />
+        <Stack.Screen name="auth-profile" component={AuthProfileScreen} />
+        <Stack.Screen name="auth-kyc" component={AuthKycScreen} />
+        <Stack.Screen name="auth-social" component={AuthSocialAccount} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  header: { backgroundColor: Colors.background },
+  fab: { borderRadius: 8, marginLeft: 10 },
+  title: { fontSize: 18, fontWeight: '600' },
+});
 
 export default StackNavigation;

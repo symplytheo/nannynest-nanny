@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, Image, Alert } from 'react-native';
+import { View, ImageBackground, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Text } from 'react-native-paper';
@@ -78,8 +78,7 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const _onDone = () => {
-    // navigation.navigate('auth-phone');
-    Alert.alert('Go to Authentication screens');
+    navigation.navigate('auth-phone');
   };
 
   return (
