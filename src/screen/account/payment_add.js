@@ -60,7 +60,7 @@ const PaymentAddBankScreen = () => {
             </View>
           )}
         </View>
-        <AppButton>Save card</AppButton>
+        <AppButton>Save bank</AppButton>
       </View>
     </SafeAreaView>
   );
