@@ -48,7 +48,6 @@ const AuthProfileScreen = ({ navigation }) => {
 
   const handleNext = () => {
     navigation.navigate('auth-kyc');
-    console.log(Object.keys(form));
   };
 
   return (

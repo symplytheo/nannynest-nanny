@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import AppButton from '../../components/appbutton';
-import OTPTextView from './components/otp_text_view';
+import OTPTextView from '../../components/otp_text_view';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 
@@ -12,7 +12,6 @@ const AuthOtpScreen = ({ route, navigation }) => {
 
   const handleNext = () => {
     navigation.navigate('auth-profile');
-    console.log({ otp });
   };
 
   return (

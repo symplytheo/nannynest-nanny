@@ -45,7 +45,6 @@ const AuthKycScreen = ({ navigation }) => {
 
   const handleNext = () => {
     navigation.navigate('auth-social');
-    console.log(Object.keys(form));
   };
 
   return (

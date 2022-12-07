@@ -10,15 +10,22 @@ import AuthOtpScreen from '../screen/auth/otp';
 import AuthSocialAccount from '../screen/auth/social_account';
 import AuthProfileScreen from '../screen/auth/profile';
 import AuthKycScreen from '../screen/auth/kyc';
+import TabNavigation from './tab';
+import AboutScreen from '../screen/account/about';
+import PaymentMethodScreen from '../screen/account/payment';
+import PaymentAddBankScreen from '../screen/account/payment_add';
+import PaymentOtpScreen from '../screen/account/payment-otp';
+import NotificationScreen from '../screen/dashboard/notification';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="welcome">
+    <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="dashboard" component={TabNavigation} />
       </Stack.Group>
 
       <Stack.Group
@@ -44,6 +51,31 @@ const StackNavigation = () => {
         <Stack.Screen name="auth-profile" component={AuthProfileScreen} />
         <Stack.Screen name="auth-kyc" component={AuthKycScreen} />
         <Stack.Screen name="auth-social" component={AuthSocialAccount} />
+
+        <Stack.Screen name="payment-otp" component={PaymentOtpScreen} />
+      </Stack.Group>
+
+      <Stack.Group
+        screenOptions={{
+          headerTitle: '',
+          headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+        }}>
+        <Stack.Screen
+          name="about"
+          component={AboutScreen}
+          options={{ headerTitle: 'About' }}
+        />
+        <Stack.Screen name="payment" component={PaymentMethodScreen} />
+        <Stack.Screen
+          name="payment-add"
+          component={PaymentAddBankScreen}
+          options={{ headerTitle: 'Add new bank' }}
+        />
+        <Stack.Screen
+          name="notification"
+          component={NotificationScreen}
+          options={{ headerTitle: 'Notification' }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
