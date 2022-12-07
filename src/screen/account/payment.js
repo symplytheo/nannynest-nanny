@@ -33,7 +33,11 @@ const PaymentMethodScreen = ({ navigation }) => {
           </RadioButton.Group>
 
           <View style={[styles.mt8, styles.status]}>
-            <AppButton icon="plus" mode="text" textColor={Colors.primary}>
+            <AppButton
+              icon="plus"
+              mode="text"
+              textColor={Colors.primary}
+              onPress={() => navigation.navigate('payment-add')}>
               Add debit/credit card
             </AppButton>
           </View>
