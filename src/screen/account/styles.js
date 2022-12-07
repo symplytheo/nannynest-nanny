@@ -25,6 +25,29 @@ const styles = StyleSheet.create({
   },
   top: { justifyContent: 'center', alignItems: 'center' },
   centered: { textAlign: 'center' },
+  title: { fontWeight: '500', marginBottom: 4 },
+  inputContainer: { marginVertical: 12 },
+  picker: {
+    inputIOS: {
+      borderWidth: 1,
+      borderColor: Colors.grey,
+      borderRadius: 6,
+      fontSize: 16,
+      height: 56,
+      paddingHorizontal: 12,
+      backgroundColor: Colors.onPrimary,
+    },
+    inputAndroid: {
+      borderWidth: 1,
+      borderColor: Colors.grey,
+      borderRadius: 6,
+      fontSize: 16,
+      height: 56,
+      paddingHorizontal: 12,
+      backgroundColor: Colors.onPrimary,
+    },
+  },
+  f1: { flex: 1 },
 });
 
 export default styles;

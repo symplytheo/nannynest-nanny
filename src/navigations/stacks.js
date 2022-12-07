@@ -13,12 +13,13 @@ import AuthKycScreen from '../screen/auth/kyc';
 import TabNavigation from './tab';
 import AboutScreen from '../screen/account/about';
 import PaymentMethodScreen from '../screen/account/payment';
+import PaymentAddBankScreen from '../screen/account/payment_add';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="welcome">
+    <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -61,6 +62,11 @@ const StackNavigation = () => {
           options={{ headerTitle: 'About' }}
         />
         <Stack.Screen name="payment" component={PaymentMethodScreen} />
+        <Stack.Screen
+          name="payment-add"
+          component={PaymentAddBankScreen}
+          options={{ headerTitle: 'Add new bank' }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
