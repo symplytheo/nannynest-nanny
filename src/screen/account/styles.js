@@ -48,6 +48,17 @@ const styles = StyleSheet.create({
     },
   },
   f1: { flex: 1 },
+  otp: {
+    marginTop: 24,
+    marginBottom: 40,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  roundedTextInput: {
+    borderRadius: 8,
+    borderWidth: 2,
+    height: 56,
+  },
 });
 
 export default styles;

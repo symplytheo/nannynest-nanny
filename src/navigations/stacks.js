@@ -14,6 +14,7 @@ import TabNavigation from './tab';
 import AboutScreen from '../screen/account/about';
 import PaymentMethodScreen from '../screen/account/payment';
 import PaymentAddBankScreen from '../screen/account/payment_add';
+import PaymentOtpScreen from '../screen/account/payment-otp';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +50,8 @@ const StackNavigation = () => {
         <Stack.Screen name="auth-profile" component={AuthProfileScreen} />
         <Stack.Screen name="auth-kyc" component={AuthKycScreen} />
         <Stack.Screen name="auth-social" component={AuthSocialAccount} />
+
+        <Stack.Screen name="payment-otp" component={PaymentOtpScreen} />
       </Stack.Group>
 
       <Stack.Group

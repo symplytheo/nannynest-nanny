@@ -12,7 +12,7 @@ const BANKS = [
   { label: 'Guaranty Trust Bank', value: 'GTBank' },
 ];
 
-const PaymentAddBankScreen = () => {
+const PaymentAddBankScreen = ({ navigation }) => {
   const [bank, setBank] = useState();
   const [acctNum, setAcctNum] = useState();
   const [acctName] = useState('Mary Jane Elizabeth');
@@ -60,7 +60,9 @@ const PaymentAddBankScreen = () => {
             </View>
           )}
         </View>
-        <AppButton>Save bank</AppButton>
+        <AppButton onPress={() => navigation.navigate('payment-otp')}>
+          Save bank
+        </AppButton>
       </View>
     </SafeAreaView>
   );
