@@ -11,6 +11,7 @@ import AuthSocialAccount from '../screen/auth/social_account';
 import AuthProfileScreen from '../screen/auth/profile';
 import AuthKycScreen from '../screen/auth/kyc';
 import TabNavigation from './tab';
+import AboutScreen from '../screen/account/about';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +47,18 @@ const StackNavigation = () => {
         <Stack.Screen name="auth-profile" component={AuthProfileScreen} />
         <Stack.Screen name="auth-kyc" component={AuthKycScreen} />
         <Stack.Screen name="auth-social" component={AuthSocialAccount} />
+      </Stack.Group>
+
+      <Stack.Group
+        screenOptions={{
+          headerTitle: '',
+          headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+        }}>
+        <Stack.Screen
+          name="about"
+          component={AboutScreen}
+          options={{ headerTitle: 'About' }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
