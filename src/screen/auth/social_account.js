@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, SafeAreaView, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AppButton from '../../components/appbutton';
@@ -37,8 +37,7 @@ const SOCIALS = [
 
 const AuthSocialAccount = ({ navigation }) => {
   const handleNext = () => {
-    Alert.alert('Complete', 'go to dashboard');
-    // navigation.navigate('dashboard', { screen: 'home' });
+    navigation.navigate('dashboard', { screen: 'home' });
   };
 
   return (
