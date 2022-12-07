@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native-picker/picker": "^2.4.8",
+    "@react-navigation/material-bottom-tabs": "^6.2.7",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
     "lodash.isequal": "^4.5.0",

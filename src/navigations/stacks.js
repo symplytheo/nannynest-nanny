@@ -10,6 +10,7 @@ import AuthOtpScreen from '../screen/auth/otp';
 import AuthSocialAccount from '../screen/auth/social_account';
 import AuthProfileScreen from '../screen/auth/profile';
 import AuthKycScreen from '../screen/auth/kyc';
+import TabNavigation from './tab';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const StackNavigation = () => {
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="dashboard" component={TabNavigation} />
       </Stack.Group>
 
       <Stack.Group
