@@ -12,6 +12,7 @@ import AuthProfileScreen from '../screen/auth/profile';
 import AuthKycScreen from '../screen/auth/kyc';
 import TabNavigation from './tab';
 import AboutScreen from '../screen/account/about';
+import PaymentMethodScreen from '../screen/account/payment';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,7 @@ const StackNavigation = () => {
           component={AboutScreen}
           options={{ headerTitle: 'About' }}
         />
+        <Stack.Screen name="payment" component={PaymentMethodScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

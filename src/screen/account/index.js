@@ -13,7 +13,7 @@ import { Colors } from '../../styles/colors';
 import styles from './styles';
 
 const SCREENS = [
-  { icon: 'cash-multiple', text: 'Payment', route: '' },
+  { icon: 'cash-multiple', text: 'Payment', route: 'payment' },
   { icon: 'account', text: 'Profile', route: '' },
   { icon: 'information', text: 'About', route: 'about' },
   { icon: 'help-circle', text: 'Help', route: '' },
