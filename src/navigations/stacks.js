@@ -15,6 +15,7 @@ import AboutScreen from '../screen/account/about';
 import PaymentMethodScreen from '../screen/account/payment';
 import PaymentAddBankScreen from '../screen/account/payment_add';
 import PaymentOtpScreen from '../screen/account/payment-otp';
+import NotificationScreen from '../screen/dashboard/notification';
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +70,11 @@ const StackNavigation = () => {
           name="payment-add"
           component={PaymentAddBankScreen}
           options={{ headerTitle: 'Add new bank' }}
+        />
+        <Stack.Screen
+          name="notification"
+          component={NotificationScreen}
+          options={{ headerTitle: 'Notification' }}
         />
       </Stack.Group>
     </Stack.Navigator>
