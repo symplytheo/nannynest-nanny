@@ -58,7 +58,11 @@ const OngoingSessionModalScreen = ({ navigation }) => {
         <AppButton
           icon={({ size, color }) => (
             <MCIcon name="message-text" color={color} size={20} />
-          )}>
+          )}
+          onPress={() => {
+            navigation.goBack();
+            navigation.navigate('chat');
+          }}>
           Chat
         </AppButton>
       </View>
