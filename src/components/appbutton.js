@@ -30,7 +30,7 @@ const AppButton = ({
       icon={icon}
       uppercase={false}
       theme={{ roundness: 2, ...theme }}
-      contentStyle={{ height: 52, ...contentStyle }}
+      contentStyle={{ height: 56, ...contentStyle }}
       labelStyle={{
         ...appTheme.fonts.labelSmall,
         fontFamily: 'Montserrat-SemiBold',
