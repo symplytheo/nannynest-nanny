@@ -65,7 +65,7 @@ const AccountScreen = ({ navigation }) => {
           <Text
             variant="bodyMedium"
             style={[styles.centered, { fontWeight: 500 + '' }]}>
-            Status: Available
+            Status: {available ? 'Available' : 'Unavailable'}
           </Text>
           <Switch
             value={available}

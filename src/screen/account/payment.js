@@ -38,7 +38,7 @@ const PaymentMethodScreen = ({ navigation }) => {
               mode="text"
               textColor={Colors.primary}
               onPress={() => navigation.navigate('payment-add')}>
-              Add debit/credit card
+              Add new bank
             </AppButton>
           </View>
         </View>
