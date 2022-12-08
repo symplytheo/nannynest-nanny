@@ -16,6 +16,8 @@ import PaymentMethodScreen from '../screen/account/payment';
 import PaymentAddBankScreen from '../screen/account/payment_add';
 import PaymentOtpScreen from '../screen/account/payment-otp';
 import NotificationScreen from '../screen/dashboard/notification';
+import EarningsScreen from '../screen/dashboard/earnings';
+import EarningDetails from '../screen/dashboard/earnings_details';
 
 const Stack = createNativeStackNavigator();
 
@@ -76,6 +78,12 @@ const StackNavigation = () => {
           component={NotificationScreen}
           options={{ headerTitle: 'Notification' }}
         />
+        <Stack.Screen
+          name="earnings"
+          component={EarningsScreen}
+          options={{ headerTitle: 'Your earnings' }}
+        />
+        <Stack.Screen name="earning-details" component={EarningDetails} />
       </Stack.Group>
     </Stack.Navigator>
   );

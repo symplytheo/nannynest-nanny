@@ -72,6 +72,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  earningItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 16,
+    borderBottomColor: Colors.grey + '33',
+    borderBottomWidth: 1,
+  },
+  rowCentered: { flexDirection: 'row', alignItems: 'center' },
+  mb8: { marginBottom: 8 },
+  mt8: { marginTop: 8 },
+  section: { paddingVertical: 16 },
+  ml16: { marginLeft: 16 },
+  medium: { fontWeight: '500' },
+  rating: { alignSelf: 'flex-start', marginRight: 4 },
 });
 
 export default styles;

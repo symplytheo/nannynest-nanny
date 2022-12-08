@@ -38,7 +38,10 @@ const DashboardScreen = ({ navigation }) => {
             style={[{ color: Colors.white }, styles.bold]}>
             ₦ 58,564.45
           </Text>
-          <TouchableOpacity style={styles.earningBtn} activeOpacity={0.75}>
+          <TouchableOpacity
+            style={styles.earningBtn}
+            activeOpacity={0.75}
+            onPress={() => navigation.navigate('earnings')}>
             <Text variant="bodySmall" style={{ color: Colors.white }}>
               Your earnings
             </Text>
