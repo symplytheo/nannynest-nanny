@@ -27,7 +27,7 @@ const DashboardScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.card}>
+        <View style={[styles.card, styles.shadow]}>
           <Text
             variant="bodyMedium"
             style={{ color: Colors.white, marginBottom: 2 + 2 }}>
