@@ -18,6 +18,7 @@ import PaymentOtpScreen from '../screen/account/payment-otp';
 import NotificationScreen from '../screen/dashboard/notification';
 import EarningsScreen from '../screen/dashboard/earnings';
 import EarningDetails from '../screen/dashboard/earnings_details';
+import OngoingSessionModalScreen from '../screen/dashboard/ongoing_session';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,11 @@ const StackNavigation = () => {
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
         <Stack.Screen name="dashboard" component={TabNavigation} />
+        <Stack.Screen
+          name="ongoing"
+          options={{ presentation: 'transparentModal' }}
+          component={OngoingSessionModalScreen}
+        />
       </Stack.Group>
 
       <Stack.Group
