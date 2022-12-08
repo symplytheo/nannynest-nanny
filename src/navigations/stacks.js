@@ -1,7 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Appbar, FAB } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from '../styles/colors';
 import OnboardingScreen from '../screen/onboarding';
 import AppSplashScreen from '../screen/splash';
@@ -19,6 +20,7 @@ import NotificationScreen from '../screen/dashboard/notification';
 import EarningsScreen from '../screen/dashboard/earnings';
 import EarningDetails from '../screen/dashboard/earnings_details';
 import OngoingSessionModalScreen from '../screen/dashboard/ongoing_session';
+import ChatScreen from '../screen/chat';
 
 const Stack = createNativeStackNavigator();
 
@@ -90,6 +92,23 @@ const StackNavigation = () => {
           options={{ headerTitle: 'Your earnings' }}
         />
         <Stack.Screen name="earning-details" component={EarningDetails} />
+        <Stack.Screen
+          name="chat"
+          component={ChatScreen}
+          options={{
+            headerTitle: 'Chat',
+            headerLeft: () => (
+              <TouchableOpacity activeOpacity={0.7}>
+                <MCIcon name="close" color={Colors.black} size={24} />
+              </TouchableOpacity>
+            ),
+            headerRight: () => (
+              <TouchableOpacity activeOpacity={0.7}>
+                <MCIcon name="phone" color={Colors.black} size={24} />
+              </TouchableOpacity>
+            ),
+          }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
