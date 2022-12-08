@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
   orderCardBadge: {
     marginLeft: 8,
     backgroundColor: Colors.primary,
-    padding: 4,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
     borderRadius: 28,
   },
   orderSession: {
