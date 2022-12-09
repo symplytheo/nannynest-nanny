@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Avatar, Divider, FAB, Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -7,16 +7,14 @@ import styles from './styles';
 import { Colors } from '../../styles/colors';
 
 const DashboardScreen = ({ navigation }) => {
+  const [isOngoing] = useState(true);
+
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={[styles.infoItem, { paddingVertical: 1 + 3 }]}>
-          <Avatar.Image
-            size={40}
-            source={person}
-            style={[styles.shadow, { marginRight: 15 + 1 }]}
-          />
-          <Text variant="bodyLarge" style={{ fontWeight: 600 + '' }}>
+          <Avatar.Image size={40} source={person} style={styles.shadow} />
+          <Text variant="bodyLarge" style={[styles.bold, styles.ml16]}>
             Hi Mary
           </Text>
           <TouchableOpacity
@@ -57,14 +55,40 @@ const DashboardScreen = ({ navigation }) => {
           <Text variant="bodyLarge" style={{ marginBottom: 15 + 1 }}>
             Ongoing session
           </Text>
-          <TouchableOpacity style={styles.sessionCard} activeOpacity={0.8}>
-            <MCIcon name="book-cancel" size={28} color={Colors.white} />
-            <Text
-              variant="bodyMedium"
-              style={{ marginLeft: 15 + 1, color: Colors.white }}>
-              You have no ongoing session
-            </Text>
-          </TouchableOpacity>
+          {isOngoing ? (
+            <TouchableOpacity
+              style={[
+                styles.sessionCard,
+                { backgroundColor: Colors.primaryContainer },
+              ]}
+              activeOpacity={0.8}
+              onPress={() => navigation.navigate('ongoing')}>
+              <Avatar.Image size={40} source={person} style={styles.shadow} />
+              <View style={[styles.ml16, { flex: 1 + 0 }]}>
+                <Text
+                  variant="bodyMedium"
+                  style={[styles.medium, { marginBottom: 4 + 0 }]}>
+                  Ongoing session
+                </Text>
+                <Text variant="bodySmall" style={{ color: Colors.primary }}>
+                  Time left{' '}
+                  <Text variant="bodySmall" style={{ color: Colors.black }}>
+                    03:04:09
+                  </Text>
+                </Text>
+              </View>
+              <MCIcon name="chevron-right" color={Colors.black} size={20} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity style={styles.sessionCard} activeOpacity={0.8}>
+              <MCIcon name="book-cancel" size={28} color={Colors.white} />
+              <Text
+                variant="bodyMedium"
+                style={[{ color: Colors.white }, styles.ml16]}>
+                You have no ongoing session
+              </Text>
+            </TouchableOpacity>
+          )}
         </View>
         <View style={{ marginTop: 24 + 0 }}>
           <Text variant="bodyLarge" style={{ marginBottom: 7 + 1 }}>

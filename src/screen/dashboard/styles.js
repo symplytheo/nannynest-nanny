@@ -87,6 +87,21 @@ const styles = StyleSheet.create({
   ml16: { marginLeft: 16 },
   medium: { fontWeight: '500' },
   rating: { alignSelf: 'flex-start', marginRight: 4 },
+  transContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: Colors.black + '77',
+  },
+  halfScreen: {
+    backgroundColor: Colors.background,
+    width: '100%',
+    paddingHorizontal: 16,
+    paddingTop: 24,
+    borderRadius: 24,
+  },
+  ongoingTitle: { textAlign: 'center', marginBottom: 24 },
+  image: { borderRadius: 16, height: 56, width: 56 },
 });
 
 export default styles;
