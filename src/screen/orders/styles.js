@@ -41,6 +41,33 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   sessionFab: { borderRadius: 72, marginBottom: 8 },
+  historyItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderColor: Colors.grey + '33',
+  },
+  rate: {
+    alignItems: 'flex-end',
+    paddingHorizontal: 8,
+    marginBottom: 8,
+    justifyContent: 'space-between',
+  },
+  mb16: { marginBottom: 16 },
+  map: {
+    width: '100%',
+    height: 120,
+    borderRadius: 8,
+  },
+  acceptModal: {
+    backgroundColor: Colors.white,
+    padding: 24,
+    margin: 24,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles;

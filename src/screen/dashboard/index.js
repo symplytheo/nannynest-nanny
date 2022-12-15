@@ -101,7 +101,10 @@ const DashboardScreen = ({ navigation, route }) => {
             Orders
           </Text>
           <View style={styles.orderSession}>
-            <TouchableOpacity style={styles.orderCard} activeOpacity={0.7}>
+            <TouchableOpacity
+              style={styles.orderCard}
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('orders')}>
               <FAB
                 icon="newspaper"
                 mode="flat"
@@ -116,7 +119,10 @@ const DashboardScreen = ({ navigation, route }) => {
                 </View>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.orderCard} activeOpacity={0.7}>
+            <TouchableOpacity
+              style={styles.orderCard}
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('orders', { tabIndex: 1 })}>
               <FAB
                 icon="lock-clock"
                 mode="flat"
