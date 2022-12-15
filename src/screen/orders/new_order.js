@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   SafeAreaView,
@@ -12,6 +12,7 @@ import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 import mapImage from '../../assets/img/map.png';
+import AcceptRequestModal from './_accept_request_modal';
 
 const SUMMARY = [
   { label: 'Discount', value: '5%' },
@@ -21,6 +22,10 @@ const SUMMARY = [
 ];
 
 const NewOrderScreen = ({ navigation }) => {
+  const [visible, setVisible] = useState(false);
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+
   return (
     <SafeAreaView style={[styles.wrapper, { backgroundColor: Colors.white }]}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -119,13 +124,24 @@ const NewOrderScreen = ({ navigation }) => {
           </Text>
         </View>
 
-        <AppButton style={styles.mb16}>Accept request</AppButton>
+        <AppButton style={styles.mb16} onPress={showModal}>
+          Accept request
+        </AppButton>
+
         <AppButton
           buttonColor={Colors.onPrimary}
           textColor={Colors.primary}
-          mode="elevated">
+          mode="elevated"
+          onPress={() => navigation.navigate('cancel')}>
           Reject request
         </AppButton>
+
+        {/* Accept Request */}
+        <AcceptRequestModal
+          visible={visible}
+          onDismiss={hideModal}
+          navigation={navigation}
+        />
       </ScrollView>
     </SafeAreaView>
   );

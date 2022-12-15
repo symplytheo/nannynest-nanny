@@ -60,6 +60,14 @@ const styles = StyleSheet.create({
     height: 120,
     borderRadius: 8,
   },
+  acceptModal: {
+    backgroundColor: Colors.white,
+    padding: 24,
+    margin: 24,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles;
