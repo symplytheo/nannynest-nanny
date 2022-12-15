@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   TouchableOpacity,
@@ -19,14 +19,23 @@ const DATA = [
   { id: 'bd7acb4a', name: 'Sombody Else' },
 ];
 
-const OrdersScreen = ({ navigation }) => {
+const OrdersScreen = ({ navigation, route: { params } }) => {
   const layout = useWindowDimensions();
 
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
+  const [index, setIndex] = useState(0);
+
+  const [routes] = useState([
     { key: 'new', title: 'New' },
     { key: 'upcoming', title: 'Upcoming' },
   ]);
+
+  useEffect(() => {
+    if (params?.tabIndex) {
+      setIndex(params?.tabIndex);
+    } else {
+      setIndex(0);
+    }
+  }, [params?.tabIndex]);
 
   const renderScene = ({ route, jumpTo }) => {
     switch (route.key) {
@@ -87,7 +96,10 @@ const OrdersScreen = ({ navigation }) => {
         <Text variant="bodyLarge" style={styles.medium}>
           My Orders
         </Text>
-        <TouchableOpacity activeOpacity={0.8} style={styles.row}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          style={styles.row}
+          onPress={() => navigation.navigate('history')}>
           <Text
             variant="bodyMedium"
             style={[{ color: Colors.primary }, styles.medium]}>

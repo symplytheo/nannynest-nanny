@@ -102,6 +102,20 @@ const EarningDetails = () => {
             We3525hy
           </Text>
         </View>
+
+        <Divider style={{ backgroundColor: Colors.grey }} />
+
+        <View style={styles.section}>
+          <Text variant="bodyLarge" style={[styles.medium, styles.mb8]}>
+            Payment Method
+          </Text>
+          <View style={styles.rowCentered}>
+            <MCIcon name="cash-multiple" color={Colors.black} size={24} />
+            <Text variant="bodyMedium" style={styles.ml16}>
+              Cash payment
+            </Text>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

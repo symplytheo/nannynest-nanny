@@ -24,6 +24,7 @@ import ChatScreen from '../screen/chat';
 import StartSessionScreen from '../screen/orders/start_session';
 import CancellationScreen from '../screen/cancellation';
 import CancellationOthersScreen from '../screen/cancellation/others';
+import OrderHistoryScreen from '../screen/orders/history';
 
 const Stack = createNativeStackNavigator();
 
@@ -102,6 +103,11 @@ const StackNavigation = () => {
           options={{ headerTitle: 'Your earnings' }}
         />
         <Stack.Screen name="earning-details" component={EarningDetails} />
+        <Stack.Screen
+          name="history"
+          component={OrderHistoryScreen}
+          options={{ headerTitle: 'History' }}
+        />
         <Stack.Screen
           name="chat"
           component={ChatScreen}

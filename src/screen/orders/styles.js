@@ -41,6 +41,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   sessionFab: { borderRadius: 72, marginBottom: 8 },
+  historyItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderColor: Colors.grey + '33',
+  },
 });
 
 export default styles;
