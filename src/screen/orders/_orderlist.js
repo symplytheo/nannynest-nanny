@@ -10,7 +10,7 @@ const Item = ({ item, showDate, navigation }) => (
   <TouchableOpacity
     style={styles.orderCard}
     activeOpacity={0.8}
-    onPress={() => navigation.navigate(showDate ? 'cancel' : 'start-session')}>
+    onPress={() => navigation.navigate(showDate ? 'cancel' : 'new-order')}>
     <Image source={person} style={styles.orderCardImage} />
     <View style={{ flex: 1 + 0 }}>
       <Text

@@ -15,7 +15,7 @@ import styles from './styles';
 const OrderHistoryScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         {[...Array(8)].map((_, x) => (
           <TouchableOpacity
             key={x}

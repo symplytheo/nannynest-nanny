@@ -25,6 +25,7 @@ import StartSessionScreen from '../screen/orders/start_session';
 import CancellationScreen from '../screen/cancellation';
 import CancellationOthersScreen from '../screen/cancellation/others';
 import OrderHistoryScreen from '../screen/orders/history';
+import NewOrderScreen from '../screen/orders/new_order';
 
 const Stack = createNativeStackNavigator();
 
@@ -107,6 +108,11 @@ const StackNavigation = () => {
           name="history"
           component={OrderHistoryScreen}
           options={{ headerTitle: 'History' }}
+        />
+        <Stack.Screen
+          name="new-order"
+          component={NewOrderScreen}
+          options={{ headerTitle: 'New Order' }}
         />
         <Stack.Screen
           name="chat"
