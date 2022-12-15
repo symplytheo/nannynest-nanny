@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Avatar, Divider, FAB, Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -6,8 +6,14 @@ import person from '../../assets/img/person.png';
 import styles from './styles';
 import { Colors } from '../../styles/colors';
 
-const DashboardScreen = ({ navigation }) => {
-  const [isOngoing] = useState(true);
+const DashboardScreen = ({ navigation, route }) => {
+  const [isOngoing, setIsOngoing] = useState(false);
+
+  useEffect(() => {
+    if (route.params?.ongoing) {
+      setIsOngoing(route.params?.ongoing);
+    }
+  }, [route.params?.ongoing]);
 
   return (
     <SafeAreaView style={styles.wrapper}>

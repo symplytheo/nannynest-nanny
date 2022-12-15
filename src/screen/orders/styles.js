@@ -35,6 +35,12 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   orderCardImage: { height: 56, width: 56, borderRadius: 16, marginRight: 8 },
+  sessionWrapper: { backgroundColor: Colors.primary, flex: 1 },
+  sessionContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  sessionFab: { borderRadius: 72, marginBottom: 8 },
 });
 
 export default styles;

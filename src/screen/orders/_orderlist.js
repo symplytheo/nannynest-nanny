@@ -6,8 +6,11 @@ import person from '../../assets/img/person.png';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 
-const Item = ({ item, showDate }) => (
-  <TouchableOpacity style={styles.orderCard} activeOpacity={0.8}>
+const Item = ({ item, showDate, navigation }) => (
+  <TouchableOpacity
+    style={styles.orderCard}
+    activeOpacity={0.8}
+    onPress={() => navigation.navigate(showDate ? 'cancel' : 'start-session')}>
     <Image source={person} style={styles.orderCardImage} />
     <View style={{ flex: 1 + 0 }}>
       <Text
@@ -42,13 +45,15 @@ const Item = ({ item, showDate }) => (
   </TouchableOpacity>
 );
 
-const OrderList = ({ data, showDate }) => {
+const OrderList = ({ data, showDate, navigation }) => {
   // const [selectedId, setSelectedId] = useState(null);
 
   return (
     <FlatList
       data={data}
-      renderItem={({ item }) => <Item item={item} showDate={showDate} />}
+      renderItem={({ item }) => (
+        <Item item={item} showDate={showDate} navigation={navigation} />
+      )}
       keyExtractor={item => item.id}
       // extraData={selectedId}
       showsVerticalScrollIndicator={false}
