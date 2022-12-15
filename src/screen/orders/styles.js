@@ -68,6 +68,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  topText: {
+    fontWeight: '600',
+    color: Colors.green,
+    margin: 16,
+  },
+  dateSummary: { marginLeft: 4, flex: 1 },
 });
 
 export default styles;

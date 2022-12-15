@@ -26,6 +26,7 @@ import CancellationScreen from '../screen/cancellation';
 import CancellationOthersScreen from '../screen/cancellation/others';
 import OrderHistoryScreen from '../screen/orders/history';
 import NewOrderScreen from '../screen/orders/new_order';
+import AcceptOrderScreen from '../screen/orders/accept_order';
 
 const Stack = createNativeStackNavigator();
 
@@ -114,6 +115,7 @@ const StackNavigation = () => {
           component={NewOrderScreen}
           options={{ headerTitle: 'New Order' }}
         />
+        <Stack.Screen name="accept-order" component={AcceptOrderScreen} />
         <Stack.Screen
           name="chat"
           component={ChatScreen}
