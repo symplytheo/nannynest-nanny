@@ -21,6 +21,7 @@ import EarningsScreen from '../screen/dashboard/earnings';
 import EarningDetails from '../screen/dashboard/earnings_details';
 import OngoingSessionModalScreen from '../screen/dashboard/ongoing_session';
 import ChatScreen from '../screen/chat';
+import StartSessionScreen from '../screen/orders/start_session';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ const StackNavigation = () => {
           options={{ presentation: 'transparentModal' }}
           component={OngoingSessionModalScreen}
         />
+        <Stack.Screen name="start-session" component={StartSessionScreen} />
       </Stack.Group>
 
       <Stack.Group
