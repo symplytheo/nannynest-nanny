@@ -10,7 +10,9 @@ const PaymentMethodScreen = ({ navigation }) => {
   const [method, setMethod] = useState('cash');
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         <Text variant="bodyLarge" style={[styles.bold, styles.mb8]}>
           Payment
         </Text>

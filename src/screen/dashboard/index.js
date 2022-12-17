@@ -17,7 +17,9 @@ const DashboardScreen = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         <View style={[styles.infoItem, { paddingVertical: 1 + 3 }]}>
           <Avatar.Image size={40} source={person} style={styles.shadow} />
           <Text variant="bodyLarge" style={[styles.bold, styles.ml16]}>

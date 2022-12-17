@@ -16,7 +16,9 @@ const SUMMARY = [
 const EarningDetails = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         <Text variant="bodyMedium" style={[{ color: Colors.grey }, styles.mb8]}>
           04 Oct, 2022 10:13AM - 03:45PM {'  '}
           <Text variant="bodyMedium" style={{ color: Colors.green }}>

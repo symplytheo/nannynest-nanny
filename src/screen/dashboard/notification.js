@@ -30,7 +30,9 @@ const NotificationScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         {[...Array(8)].map((_, i) => (
           <TouchableOpacity
             key={i}

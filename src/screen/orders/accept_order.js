@@ -20,7 +20,7 @@ const SUMMARY = [
   { label: 'Total', value: '$2750.00' },
 ];
 
-const AcceptOrderScreen = ({ navigation }) => {
+const AcceptOrderScreen = ({ navigation, route: { params } }) => {
   const [message, setMessage] = useState('You have accepted this request');
 
   useEffect(() => {
@@ -35,12 +35,20 @@ const AcceptOrderScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
+  useEffect(() => {
+    if (params?.type === 'arrived') {
+      setMessage('You have arrived');
+    }
+  }, [params?.type]);
+
   return (
     <SafeAreaView style={[styles.wrapper, { backgroundColor: Colors.white }]}>
       <Text style={[styles.topText, styles.mb16]} variant="labelLarge">
         {message}
       </Text>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         {[1, 2].map(x => (
           <View key={x} style={[styles.row, styles.rate]}>
             <Text variant="bodyMedium">2x Infants</Text>
@@ -139,7 +147,7 @@ const AcceptOrderScreen = ({ navigation }) => {
       {message.includes('accepted') ? (
         <AppButton
           style={[styles.mb16, { margin: 15 + 1 }]}
-          onPress={() => setMessage("You've have arrived")}>
+          onPress={() => navigation.navigate('onmyway')}>
           On my way
         </AppButton>
       ) : (

@@ -24,7 +24,9 @@ const AccountScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         <View style={styles.top}>
           <Image source={person} style={[styles.dp, styles.mb8]} />
           <Text variant="bodyLarge" style={styles.bold}>

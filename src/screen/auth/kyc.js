@@ -49,7 +49,9 @@ const AuthKycScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.mainContent}>
+      <ScrollView
+        contentContainerStyle={styles.mainContent}
+        showsVerticalScrollIndicator={false}>
         <Text variant="titleMedium" style={styles.title}>
           Update your KYC
         </Text>

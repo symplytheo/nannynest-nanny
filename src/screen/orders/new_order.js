@@ -28,7 +28,9 @@ const NewOrderScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={[styles.wrapper, { backgroundColor: Colors.white }]}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         {[1, 2].map(x => (
           <View key={x} style={[styles.row, styles.rate]}>
             <Text variant="bodyMedium">2x Infants</Text>
