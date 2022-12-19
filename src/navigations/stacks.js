@@ -29,6 +29,7 @@ import NewOrderScreen from '../screen/orders/new_order';
 import AcceptOrderScreen from '../screen/orders/accept_order';
 import OnMyWayScreen from '../screen/orders/onmyway';
 import { useNavigation } from '@react-navigation/native';
+import OrderArrivedScreen from '../screen/orders/order_arrived';
 
 const Stack = createNativeStackNavigator();
 
@@ -127,6 +128,7 @@ const StackNavigation = () => {
           options={{ headerTitle: 'New Order' }}
         />
         <Stack.Screen name="accept-order" component={AcceptOrderScreen} />
+        <Stack.Screen name="order-arrived" component={OrderArrivedScreen} />
         <Stack.Screen
           name="chat"
           component={ChatScreen}

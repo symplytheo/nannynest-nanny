@@ -20,7 +20,7 @@ const SUMMARY = [
   { label: 'Total', value: '$2750.00' },
 ];
 
-const AcceptOrderScreen = ({ navigation }) => {
+const OrderArrivedScreen = ({ navigation }) => {
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -36,7 +36,7 @@ const AcceptOrderScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={[styles.wrapper, { backgroundColor: Colors.white }]}>
       <Text style={[styles.topText, styles.mb16]} variant="labelLarge">
-        You have accepted this request
+        You have arrived
       </Text>
       <ScrollView
         contentContainerStyle={styles.container}
@@ -136,14 +136,13 @@ const AcceptOrderScreen = ({ navigation }) => {
           </Text>
         </View>
       </ScrollView>
-
       <AppButton
         style={[styles.mb16, { margin: 15 + 1 }]}
-        onPress={() => navigation.navigate('onmyway')}>
-        On my way
+        onPress={() => navigation.navigate('start-session')}>
+        Start session
       </AppButton>
     </SafeAreaView>
   );
 };
 
-export default AcceptOrderScreen;
+export default OrderArrivedScreen;

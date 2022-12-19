@@ -73,16 +73,8 @@ const OnMyWayScreen = ({ navigation }) => {
               <View>
                 <AppButton
                   style={{ marginBottom: 8 + 0 }}
-                  onPress={() =>
-                    navigation.navigate('accept-order', { type: 'arrived' })
-                  }>
+                  onPress={() => navigation.navigate('order-arrived')}>
                   I have arrived
-                </AppButton>
-                <AppButton
-                  buttonColor={Colors.primaryContainer}
-                  textColor={Colors.primary}
-                  onPress={() => navigation.navigate('cancel')}>
-                  Cancel
                 </AppButton>
               </View>
             </View>
