@@ -27,10 +27,13 @@ import CancellationOthersScreen from '../screen/cancellation/others';
 import OrderHistoryScreen from '../screen/orders/history';
 import NewOrderScreen from '../screen/orders/new_order';
 import AcceptOrderScreen from '../screen/orders/accept_order';
+import OnMyWayScreen from '../screen/orders/onmyway';
+import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
+  const navigation = useNavigation();
   return (
     <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
@@ -47,18 +50,21 @@ const StackNavigation = () => {
 
       <Stack.Group
         screenOptions={{
-          header: ({ navigation, back, options }) => (
+          header: props => (
             <Appbar.Header style={styles.header}>
-              {back ? (
+              {props.back ? (
                 <FAB
                   customSize={48}
                   mode="flat"
                   icon="arrow-left"
                   style={styles.fab}
-                  onPress={navigation.goBack}
+                  onPress={props.navigation.goBack}
                 />
               ) : null}
-              <Appbar.Content title={options.title} titleStyle={styles.title} />
+              <Appbar.Content
+                title={props.options.title}
+                titleStyle={styles.title}
+              />
             </Appbar.Header>
           ),
           headerTitle: null,
@@ -82,6 +88,11 @@ const StackNavigation = () => {
         screenOptions={{
           headerTitle: '',
           headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+          headerLeft: () => (
+            <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack}>
+              <MCIcon name="arrow-left" size={24} color={Colors.black} />
+            </TouchableOpacity>
+          ),
         }}>
         <Stack.Screen
           name="about"
@@ -131,6 +142,19 @@ const StackNavigation = () => {
                 <MCIcon name="phone" color={Colors.black} size={24} />
               </TouchableOpacity>
             ),
+          }}
+        />
+        <Stack.Screen
+          name="onmyway"
+          component={OnMyWayScreen}
+          options={{
+            headerTitle: "You're heading to:",
+            headerTitleStyle: {
+              fontWeight: '400',
+              fontSize: 14,
+              fontFamily: 'Montserrat',
+            },
+            headerShadowVisible: false,
           }}
         />
       </Stack.Group>
