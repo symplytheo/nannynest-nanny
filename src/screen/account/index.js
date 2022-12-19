@@ -14,7 +14,7 @@ import styles from './styles';
 
 const SCREENS = [
   { icon: 'cash-multiple', text: 'Payment', route: 'payment' },
-  { icon: 'account', text: 'Profile', route: '' },
+  { icon: 'account', text: 'Profile', route: 'profile' },
   { icon: 'information', text: 'About', route: 'about' },
   { icon: 'help-circle', text: 'Help', route: '' },
 ];
@@ -24,7 +24,9 @@ const AccountScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}>
         <View style={styles.top}>
           <Image source={person} style={[styles.dp, styles.mb8]} />
           <Text variant="bodyLarge" style={styles.bold}>

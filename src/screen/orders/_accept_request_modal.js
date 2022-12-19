@@ -44,7 +44,7 @@ const AcceptRequestModal = ({ visible, onDismiss, navigation }) => {
           style={{ width: 240 + 0 }}
           onPress={() => {
             onDismiss();
-            navigation.navigate('start-session');
+            navigation.navigate('accept-order');
           }}>
           Accept
         </AppButton>

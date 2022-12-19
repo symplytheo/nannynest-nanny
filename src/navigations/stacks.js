@@ -26,10 +26,16 @@ import CancellationScreen from '../screen/cancellation';
 import CancellationOthersScreen from '../screen/cancellation/others';
 import OrderHistoryScreen from '../screen/orders/history';
 import NewOrderScreen from '../screen/orders/new_order';
+import AcceptOrderScreen from '../screen/orders/accept_order';
+import OnMyWayScreen from '../screen/orders/onmyway';
+import { useNavigation } from '@react-navigation/native';
+import OrderArrivedScreen from '../screen/orders/order_arrived';
+import ProfileOverviewScreen from '../screen/account/profile';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
+  const navigation = useNavigation();
   return (
     <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
@@ -46,18 +52,21 @@ const StackNavigation = () => {
 
       <Stack.Group
         screenOptions={{
-          header: ({ navigation, back, options }) => (
+          header: props => (
             <Appbar.Header style={styles.header}>
-              {back ? (
+              {props.back ? (
                 <FAB
                   customSize={48}
                   mode="flat"
                   icon="arrow-left"
                   style={styles.fab}
-                  onPress={navigation.goBack}
+                  onPress={props.navigation.goBack}
                 />
               ) : null}
-              <Appbar.Content title={options.title} titleStyle={styles.title} />
+              <Appbar.Content
+                title={props.options.title}
+                titleStyle={styles.title}
+              />
             </Appbar.Header>
           ),
           headerTitle: null,
@@ -81,6 +90,11 @@ const StackNavigation = () => {
         screenOptions={{
           headerTitle: '',
           headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+          headerLeft: () => (
+            <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack}>
+              <MCIcon name="arrow-left" size={24} color={Colors.black} />
+            </TouchableOpacity>
+          ),
         }}>
         <Stack.Screen
           name="about"
@@ -114,6 +128,8 @@ const StackNavigation = () => {
           component={NewOrderScreen}
           options={{ headerTitle: 'New Order' }}
         />
+        <Stack.Screen name="accept-order" component={AcceptOrderScreen} />
+        <Stack.Screen name="order-arrived" component={OrderArrivedScreen} />
         <Stack.Screen
           name="chat"
           component={ChatScreen}
@@ -130,6 +146,24 @@ const StackNavigation = () => {
               </TouchableOpacity>
             ),
           }}
+        />
+        <Stack.Screen
+          name="onmyway"
+          component={OnMyWayScreen}
+          options={{
+            headerTitle: "You're heading to:",
+            headerTitleStyle: {
+              fontWeight: '400',
+              fontSize: 14,
+              fontFamily: 'Montserrat',
+            },
+            headerShadowVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="profile"
+          component={ProfileOverviewScreen}
+          options={{ headerTitle: 'Profile' }}
         />
       </Stack.Group>
     </Stack.Navigator>

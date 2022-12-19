@@ -83,7 +83,8 @@ const ChatScreen = ({ navigation }) => {
         contentContainerStyle={[styles.container, { minHeight: 100 + '%' }]}
         onContentSizeChange={() =>
           scrollViewRef.current.scrollToEnd({ animated: true })
-        }>
+        }
+        showsVerticalScrollIndicator={false}>
         <View>
           <Text variant="bodyMedium" style={[styles.chatDate, styles.mb16]}>
             Thu, Sep 29
