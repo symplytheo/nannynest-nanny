@@ -14,7 +14,7 @@ import styles from './styles';
 
 const SCREENS = [
   { icon: 'cash-multiple', text: 'Payment', route: 'payment' },
-  { icon: 'account', text: 'Profile', route: '' },
+  { icon: 'account', text: 'Profile', route: 'profile' },
   { icon: 'information', text: 'About', route: 'about' },
   { icon: 'help-circle', text: 'Help', route: '' },
 ];

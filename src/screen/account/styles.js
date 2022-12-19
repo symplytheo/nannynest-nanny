@@ -59,6 +59,31 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 56,
   },
+  socialBtn: { height: 56, marginVertical: 8 },
+  profileOverview: { flexDirection: 'row', alignItems: 'center' },
+  chipContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingVertical: 12,
+  },
+  chip: {
+    borderRadius: 24,
+    marginRight: 8,
+  },
+  chipText: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  section: {
+    marginTop: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#DDD',
+    paddingBottom: 24,
+  },
+  socials: {
+    marginTop: 8,
+    paddingVertical: 16,
+  },
 });
 
 export default styles;
