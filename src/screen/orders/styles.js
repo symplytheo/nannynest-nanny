@@ -4,7 +4,7 @@ import { Colors } from '../../styles/colors';
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.white,
   },
   container: { padding: 16 },
   px16: { paddingHorizontal: 16 },
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   tabBar: {
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.white,
   },
   badge: {
     paddingHorizontal: 4,
@@ -74,6 +74,34 @@ const styles = StyleSheet.create({
     margin: 16,
   },
   dateSummary: { marginLeft: 4, flex: 1 },
+  mapBg: {
+    position: 'relative',
+    minHeight: '100%',
+    width: '100%',
+    justifyContent: 'flex-end',
+  },
+  bottomSheet: {
+    backgroundColor: Colors.background,
+    width: '100%',
+    paddingHorizontal: 16,
+    paddingTop: 24,
+    borderRadius: 24,
+  },
+  arrow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
+    marginBottom: 4,
+  },
+  destination: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    paddingBottom: 8,
+    paddingHorizontal: 16,
+    backgroundColor: Colors.white,
+  },
 });
 
 export default styles;
