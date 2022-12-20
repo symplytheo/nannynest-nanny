@@ -39,7 +39,7 @@ const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
   const navigation = useNavigation();
   return (
-    <Stack.Navigator initialRouteName="dashboard">
+    <Stack.Navigator initialRouteName="welcome">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
