@@ -1,5 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors } from '../../styles/colors';
+import { Fonts } from '../../styles/fonts';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -92,6 +93,18 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     backgroundColor: Colors.primaryContainer,
+  },
+  faqQues: {
+    ...Fonts.bodyMedium,
+    fontWeight: '500',
+  },
+  faqAns: { ...Fonts.bodyMedium },
+  padless: { padding: 0 },
+  accordion: {
+    backgroundColor: Colors.white,
+    paddingVertical: 16,
+    paddingHorizontal: 0,
+    marginLeft: -4,
   },
 });
 

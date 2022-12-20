@@ -16,7 +16,7 @@ const SCREENS = [
   { icon: 'cash-multiple', text: 'Payment', route: 'payment' },
   { icon: 'account', text: 'Profile', route: 'profile' },
   { icon: 'information', text: 'About', route: 'about' },
-  { icon: 'help-circle', text: 'Help', route: '' },
+  { icon: 'help-circle', text: 'Help', route: 'help' },
 ];
 
 const AccountScreen = ({ navigation }) => {
@@ -82,11 +82,7 @@ const AccountScreen = ({ navigation }) => {
               key={screen.text}
               activeOpacity={0.7}
               style={styles.tabActionItem}
-              onPress={
-                screen.route
-                  ? () => navigation.navigate(screen.route)
-                  : () => {}
-              }>
+              onPress={() => navigation.navigate(screen.route)}>
               <MCIcon
                 name={screen.icon}
                 style={{ marginRight: 16 + 0 }}

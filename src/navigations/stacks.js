@@ -32,6 +32,7 @@ import { useNavigation } from '@react-navigation/native';
 import OrderArrivedScreen from '../screen/orders/order_arrived';
 import ProfileOverviewScreen from '../screen/account/profile';
 import UpdateProfileScreen from '../screen/account/update_profile';
+import HelpScreen from '../screen/account/help';
 
 const Stack = createNativeStackNavigator();
 
@@ -170,6 +171,11 @@ const StackNavigation = () => {
           name="update-profile"
           component={UpdateProfileScreen}
           options={{ headerTitle: 'Update profile' }}
+        />
+        <Stack.Screen
+          name="help"
+          component={HelpScreen}
+          options={{ headerTitle: 'Help' }}
         />
       </Stack.Group>
     </Stack.Navigator>
