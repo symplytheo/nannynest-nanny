@@ -31,6 +31,7 @@ import OnMyWayScreen from '../screen/orders/onmyway';
 import { useNavigation } from '@react-navigation/native';
 import OrderArrivedScreen from '../screen/orders/order_arrived';
 import ProfileOverviewScreen from '../screen/account/profile';
+import UpdateProfileScreen from '../screen/account/update_profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -164,6 +165,11 @@ const StackNavigation = () => {
           name="profile"
           component={ProfileOverviewScreen}
           options={{ headerTitle: 'Profile' }}
+        />
+        <Stack.Screen
+          name="update-profile"
+          component={UpdateProfileScreen}
+          options={{ headerTitle: 'Update profile' }}
         />
       </Stack.Group>
     </Stack.Navigator>
