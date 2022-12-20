@@ -102,7 +102,8 @@ const styles = StyleSheet.create({
       fontSize: 16,
       height: 56,
       paddingHorizontal: 12,
-      backgroundColor: Colors.onPrimary,
+      fontFamily: 'Montserrat',
+      backgroundColor: Colors.primaryContainer + '33',
     },
     inputAndroid: {
       borderWidth: 1,
@@ -111,8 +112,10 @@ const styles = StyleSheet.create({
       fontSize: 16,
       height: 56,
       paddingHorizontal: 12,
-      backgroundColor: Colors.onPrimary,
+      fontFamily: 'Montserrat',
+      backgroundColor: Colors.primaryContainer + '33',
     },
+    placeholder: { color: Colors.grey },
   },
 });
 

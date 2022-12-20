@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   SafeAreaView,
@@ -12,6 +12,8 @@ import person from '../../assets/img/person.png';
 import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
+import ProfileAboutModal from './update_profile/about';
+import ProfileCategoriesModal from './update_profile/categories';
 
 const SOCIALS = [
   {
@@ -43,6 +45,9 @@ const SOCIALS = [
 ];
 
 const ProfileOverviewScreen = ({ navigation }) => {
+  const [showCategory, setShowCategory] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView
@@ -80,7 +85,8 @@ const ProfileOverviewScreen = ({ navigation }) => {
             <TouchableOpacity activeOpacity={0.8}>
               <Text
                 variant="bodyMedium"
-                style={{ color: Colors.primary, fontWeight: 500 + '' }}>
+                style={{ color: Colors.primary, fontWeight: 500 + '' }}
+                onPress={() => setShowAbout(true)}>
                 Edit
               </Text>
             </TouchableOpacity>
@@ -106,7 +112,8 @@ const ProfileOverviewScreen = ({ navigation }) => {
             <TouchableOpacity activeOpacity={0.8}>
               <Text
                 variant="bodyMedium"
-                style={{ color: Colors.primary, fontWeight: 500 + '' }}>
+                style={{ color: Colors.primary, fontWeight: 500 + '' }}
+                onPress={() => setShowCategory(true)}>
                 Edit
               </Text>
             </TouchableOpacity>
@@ -178,6 +185,13 @@ const ProfileOverviewScreen = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+
+      {/*  */}
+      <ProfileCategoriesModal
+        open={showCategory}
+        onClose={() => setShowCategory(false)}
+      />
+      <ProfileAboutModal open={showAbout} onClose={() => setShowAbout(false)} />
     </SafeAreaView>
   );
 };

@@ -31,13 +31,15 @@ import OnMyWayScreen from '../screen/orders/onmyway';
 import { useNavigation } from '@react-navigation/native';
 import OrderArrivedScreen from '../screen/orders/order_arrived';
 import ProfileOverviewScreen from '../screen/account/profile';
+import UpdateProfileScreen from '../screen/account/update_profile';
+import HelpScreen from '../screen/account/help';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   const navigation = useNavigation();
   return (
-    <Stack.Navigator initialRouteName="dashboard">
+    <Stack.Navigator initialRouteName="welcome">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -164,6 +166,16 @@ const StackNavigation = () => {
           name="profile"
           component={ProfileOverviewScreen}
           options={{ headerTitle: 'Profile' }}
+        />
+        <Stack.Screen
+          name="update-profile"
+          component={UpdateProfileScreen}
+          options={{ headerTitle: 'Update profile' }}
+        />
+        <Stack.Screen
+          name="help"
+          component={HelpScreen}
+          options={{ headerTitle: 'Help' }}
         />
       </Stack.Group>
     </Stack.Navigator>

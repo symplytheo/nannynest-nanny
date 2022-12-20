@@ -8,7 +8,7 @@ import AppButton from '../../components/appbutton';
 import styles from './styles';
 import { Colors } from '../../styles/colors';
 import RNPickerSelect from '../../components/RNPickerSelect';
-import COUNTRIES from '../../assets/js/countries.json';
+import { COUNTRIES, PRONOUNS } from '../../assets/js/data';
 
 const AuthKycScreen = ({ navigation }) => {
   const [form, setForm] = useState({
@@ -18,8 +18,6 @@ const AuthKycScreen = ({ navigation }) => {
     dob: getToday(),
     terms: true,
   });
-
-  const countries = COUNTRIES.map(x => ({ label: x.name, value: x.name }));
 
   const handleFileUpload = async () => {
     try {
@@ -107,7 +105,7 @@ const AuthKycScreen = ({ navigation }) => {
             <RNPickerSelect
               useNativeAndroidPickerStyle={false}
               onValueChange={val => console.log(val)}
-              items={countries}
+              items={COUNTRIES}
               placeholder={{ label: 'Select country', value: null }}
               style={styles.picker}
             />
@@ -130,10 +128,12 @@ const AuthKycScreen = ({ navigation }) => {
               style={[styles.title, { marginBottom: 4 + 0 }]}>
               Preferred Pronouns
             </Text>
-            <TextInput
-              mode="outlined"
-              placeholder=""
-              style={{ height: styles.input.height }}
+            <RNPickerSelect
+              useNativeAndroidPickerStyle={false}
+              onValueChange={val => console.log(val)}
+              items={PRONOUNS}
+              placeholder={{ label: 'Select Pronouns', value: null }}
+              style={styles.picker}
             />
           </View>
           <View style={styles.terms}>

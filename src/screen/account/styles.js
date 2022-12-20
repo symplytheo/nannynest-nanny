@@ -1,5 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors } from '../../styles/colors';
+import { Fonts } from '../../styles/fonts';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -35,7 +36,8 @@ const styles = StyleSheet.create({
       fontSize: 16,
       height: 56,
       paddingHorizontal: 12,
-      backgroundColor: Colors.onPrimary,
+      fontFamily: 'Montserrat',
+      backgroundColor: Colors.primaryContainer + '33',
     },
     inputAndroid: {
       borderWidth: 1,
@@ -44,8 +46,10 @@ const styles = StyleSheet.create({
       fontSize: 16,
       height: 56,
       paddingHorizontal: 12,
-      backgroundColor: Colors.onPrimary,
+      fontFamily: 'Montserrat',
+      backgroundColor: Colors.primaryContainer + '33',
     },
+    placeholder: { color: Colors.grey },
   },
   f1: { flex: 1 },
   otp: {
@@ -83,6 +87,24 @@ const styles = StyleSheet.create({
   socials: {
     marginTop: 8,
     paddingVertical: 16,
+  },
+  input: { height: 56, lineHeight: 16 },
+  avatar: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: Colors.primaryContainer,
+  },
+  faqQues: {
+    ...Fonts.bodyMedium,
+    fontWeight: '500',
+  },
+  faqAns: { ...Fonts.bodyMedium },
+  padless: { padding: 0 },
+  accordion: {
+    backgroundColor: Colors.white,
+    paddingVertical: 16,
+    paddingHorizontal: 0,
+    marginLeft: -4,
   },
 });
 
