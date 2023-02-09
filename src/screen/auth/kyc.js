@@ -23,11 +23,7 @@ const AuthKycScreen = ({ navigation }) => {
     try {
       const file = await DocumentPicker.pickSingle({
         presentationStyle: 'fullScreen',
-        type: [
-          DocumentPicker.types.pdf,
-          DocumentPicker.types.doc,
-          DocumentPicker.types.docx,
-        ],
+        type: [DocumentPicker.types.pdf, DocumentPicker.types.doc, DocumentPicker.types.docx],
         copyTo: 'documentDirectory',
       });
       setForm({ ...form, file });
@@ -47,24 +43,17 @@ const AuthKycScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
-        contentContainerStyle={styles.mainContent}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={styles.mainContent} showsVerticalScrollIndicator={false}>
         <Text variant="titleMedium" style={styles.title}>
           Update your KYC
         </Text>
 
         <View style={styles.form}>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Upload a valid ID
             </Text>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              style={styles.file}
-              onPress={handleFileUpload}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.file} onPress={handleFileUpload}>
               {!form.file ? (
                 <View style={styles.rowBtwn}>
                   <Text
@@ -97,9 +86,7 @@ const AuthKycScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Country
             </Text>
             <RNPickerSelect
@@ -111,9 +98,7 @@ const AuthKycScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Languages
             </Text>
             <TextInput
@@ -123,9 +108,7 @@ const AuthKycScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Preferred Pronouns
             </Text>
             <RNPickerSelect
@@ -143,9 +126,7 @@ const AuthKycScreen = ({ navigation }) => {
                 setForm(prev => ({ ...prev, terms: !prev.terms }));
               }}
             />
-            <Text variant="bodyMedium">
-              I agree to the Terms of Services and Privacy policy.
-            </Text>
+            <Text variant="bodyMedium">I agree to the Terms of Services and Privacy policy.</Text>
           </View>
         </View>
         <AppButton onPress={handleNext}>Continue</AppButton>

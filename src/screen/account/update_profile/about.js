@@ -17,10 +17,7 @@ const ProfileAboutModal = ({ open, onClose }) => {
       onRequestClose={() => {
         console.log('Modal has been closed.');
       }}>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={styles.modalContainer}
-        onPress={onClose}>
+      <TouchableOpacity activeOpacity={1} style={styles.modalContainer} onPress={onClose}>
         <View
           style={styles.modalView}
           onStartShouldSetResponder={event => true}
@@ -68,10 +65,11 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.black,
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-SemiBold',
     fontWeight: '600',
     fontSize: 16,
     lineHeight: 24,
+    marginLeft: 16,
   },
   input: { height: 112, marginBottom: 16 },
 });

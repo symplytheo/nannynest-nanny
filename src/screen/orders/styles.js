@@ -102,6 +102,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: Colors.white,
   },
+  est: { flexDirection: 'row', justifyContent: 'space-between' },
+  estTime: { fontWeight: '600', fontFamily: 'Montserrat-SemiBold' },
+  estTimeCon: { flexDirection: 'row', alignItems: 'flex-end' },
+  mbl4: { marginBottom: 4, marginLeft: 4 },
 });
 
 export default styles;

@@ -60,9 +60,7 @@ const PaymentAddBankScreen = ({ navigation }) => {
             </View>
           )}
         </View>
-        <AppButton onPress={() => navigation.navigate('payment-otp')}>
-          Save bank
-        </AppButton>
+        <AppButton onPress={() => navigation.navigate('payment-otp')}>Save bank</AppButton>
       </View>
     </SafeAreaView>
   );

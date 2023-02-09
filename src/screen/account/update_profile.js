@@ -43,27 +43,19 @@ const UpdateProfileScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView
-        contentContainerStyle={styles.container}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.mb8}>
           <View style={styles.inputContainer}>
             <TouchableOpacity activeOpacity={0.8} onPress={handleImageUpload}>
               {form.avatar ? (
-                <Avatar.Image
-                  source={{ uri: form.avatar }}
-                  style={styles.avatar}
-                  size={80}
-                />
+                <Avatar.Image source={{ uri: form.avatar }} style={styles.avatar} size={80} />
               ) : (
                 <Avatar.Icon icon="account" style={styles.avatar} size={80} />
               )}
             </TouchableOpacity>
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Full name
             </Text>
             <TextInput
@@ -73,9 +65,7 @@ const UpdateProfileScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Email address
             </Text>
             <TextInput
@@ -86,14 +76,10 @@ const UpdateProfileScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               How old are you?
             </Text>
-            <TouchableOpacity
-              activeOpacity={0.75}
-              onPress={() => setDateModal(true)}>
+            <TouchableOpacity activeOpacity={0.75} onPress={() => setDateModal(true)}>
               <View pointerEvents="none">
                 <TextInput
                   mode="outlined"
@@ -107,9 +93,7 @@ const UpdateProfileScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Country
             </Text>
             <RNPickerSelect
@@ -121,9 +105,7 @@ const UpdateProfileScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Languages
             </Text>
             <TextInput
@@ -133,9 +115,7 @@ const UpdateProfileScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Preferred Pronouns
             </Text>
             <RNPickerSelect

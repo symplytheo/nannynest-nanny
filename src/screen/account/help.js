@@ -10,9 +10,7 @@ const HelpScreen = () => {
     <SafeAreaView style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.mb8}>
-          <Text
-            variant="bodyLarge"
-            style={[{ fontWeight: 500 + '' }, styles.mb8]}>
+          <Text variant="bodyLarge" style={[{ fontWeight: 500 + '' }, styles.mb8]}>
             How can I help you?
           </Text>
           <View style={[styles.profileOverview, styles.mb8]}>
@@ -29,16 +27,14 @@ const HelpScreen = () => {
         <Divider style={[styles.mb8, styles.mt8]} />
 
         <View style={styles.mt8}>
-          <Text
-            variant="bodyLarge"
-            style={[{ fontWeight: 500 + '' }, styles.mb8]}>
+          <Text variant="bodyLarge" style={[{ fontWeight: 500 + '' }, styles.mb8]}>
             FAQs
           </Text>
           <List.AccordionGroup>
             {[...Array(5)].map((_, i) => (
               <>
                 <List.Accordion
-                  key={i + 1}
+                  key={i + '#'}
                   title="How do I withdraw my earnings?"
                   titleNumberOfLines={2}
                   id={i + 1}

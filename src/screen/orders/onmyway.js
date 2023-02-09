@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ImageBackground,
-  SafeAreaView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { ImageBackground, SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { Divider, Text } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -21,11 +16,9 @@ const OnMyWayScreen = ({ navigation }) => {
     <SafeAreaView style={styles.wrapper}>
       <ImageBackground source={map} style={styles.mapBg}>
         <View style={styles.destination}>
-          <Text
-            variant="bodyMedium"
-            style={[styles.medium, { textAlign: 'center' + '' }]}>
-            <MCIcon name="map-marker" color={Colors.primary} size={16} /> 5a,
-            Ajayi Oni Street, Lagos, Nigeria
+          <Text variant="bodyMedium" style={[styles.medium, { textAlign: 'center' + '' }]}>
+            <MCIcon name="map-marker" color={Colors.primary} size={16} /> 5a, Ajayi Oni Street,
+            Lagos, Nigeria
           </Text>
         </View>
         <View style={[styles.bottomSheet, { paddingBottom: insets.bottom }]}>
@@ -36,19 +29,22 @@ const OnMyWayScreen = ({ navigation }) => {
             <MCIcon name={show ? 'chevron-down' : 'chevron-up'} size={24} />
           </TouchableOpacity>
 
-          <View style={[styles.row, styles.rate]}>
+          <View style={styles.est}>
             <View>
               <Text variant="bodyMedium" style={{ color: Colors.grey }}>
                 Estimated arrival time
               </Text>
-              <Text variant="headlineMedium" style={{ fontWeight: 600 + '' }}>
-                13 <Text variant="bodyMedium">mins</Text>
-              </Text>
+              <View style={styles.estTimeCon}>
+                <Text variant="headlineMedium" style={styles.estTime}>
+                  13
+                </Text>
+                <Text variant="bodyMedium" style={styles.mbl4}>
+                  mins
+                </Text>
+              </View>
             </View>
             <AppButton
-              icon={({ color }) => (
-                <MCIcon name="message-text" size={24} color={color} />
-              )}
+              icon={({ color }) => <MCIcon name="message-text" size={24} color={color} />}
               mode="text"
               style={{ width: 120 + 0 }}
               onPress={() => navigation.navigate('chat')}>
@@ -60,11 +56,9 @@ const OnMyWayScreen = ({ navigation }) => {
             <View>
               <Divider bold style={styles.mb16} />
               <TouchableOpacity activeOpacity={0.7}>
-                <View style={[styles.row, styles.mb16]}>
+                <View style={[styles.row, styles.mb16, { alignItems: 'flex-end' + '' }]}>
                   <MCIcon name="map-marker" size={24} color={Colors.primary} />
-                  <Text variant="bodyMedium">
-                    5a, Ajayi Oni Street, Lagos, Nigeria
-                  </Text>
+                  <Text variant="bodyMedium">5a, Ajayi Oni Street, Lagos, Nigeria</Text>
                 </View>
               </TouchableOpacity>
 

@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Divider, Switch, Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import person from '../../assets/img/person.png';
@@ -24,17 +18,13 @@ const AccountScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView
-        contentContainerStyle={styles.container}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.top}>
           <Image source={person} style={[styles.dp, styles.mb8]} />
           <Text variant="bodyLarge" style={styles.bold}>
             Mary Jane
           </Text>
-          <Text
-            variant="bodyMedium"
-            style={[{ color: Colors.grey }, styles.mb8]}>
+          <Text variant="bodyMedium" style={[{ color: Colors.grey }, styles.mb8]}>
             +234 816 770 2086
           </Text>
           <View style={[styles.container, { flexDirection: 'row' + '' }]}>
@@ -42,9 +32,7 @@ const AccountScreen = ({ navigation }) => {
               <Text variant="bodyMedium" style={styles.centered}>
                 2,034
               </Text>
-              <Text
-                variant="bodyMedium"
-                style={[styles.centered, { fontWeight: 500 + '' }]}>
+              <Text variant="bodyMedium" style={[styles.centered, { fontWeight: 500 + '' }]}>
                 Orders
               </Text>
             </View>
@@ -52,9 +40,7 @@ const AccountScreen = ({ navigation }) => {
               <Text variant="bodyMedium" style={styles.centered}>
                 234
               </Text>
-              <Text
-                variant="bodyMedium"
-                style={[styles.centered, { fontWeight: 500 + '' }]}>
+              <Text variant="bodyMedium" style={[styles.centered, { fontWeight: 500 + '' }]}>
                 Ratings
               </Text>
             </View>
@@ -64,15 +50,13 @@ const AccountScreen = ({ navigation }) => {
         <Divider style={{ backgroundColor: Colors.grey + '33' }} />
 
         <View style={[styles.status, styles.container, styles.mt8]}>
-          <Text
-            variant="bodyMedium"
-            style={[styles.centered, { fontWeight: 500 + '' }]}>
+          <Text variant="bodyMedium" style={[styles.centered, { fontWeight: 500 + '' }]}>
             Status: {available ? 'Available' : 'Unavailable'}
           </Text>
           <Switch
             value={available}
             onValueChange={v => setAvailable(v)}
-            style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
+            style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
           />
         </View>
 

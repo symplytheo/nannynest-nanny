@@ -1,6 +1,5 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Appbar, FAB } from 'react-native-paper';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from '../styles/colors';
@@ -54,24 +53,17 @@ const StackNavigation = () => {
 
       <Stack.Group
         screenOptions={{
-          header: props => (
-            <Appbar.Header style={styles.header}>
-              {props.back ? (
-                <FAB
-                  customSize={48}
-                  mode="flat"
-                  icon="arrow-left"
-                  style={styles.fab}
-                  onPress={props.navigation.goBack}
-                />
-              ) : null}
-              <Appbar.Content
-                title={props.options.title}
-                titleStyle={styles.title}
-              />
-            </Appbar.Header>
+          headerLeft: ({ canGoBack }) => (
+            <TouchableOpacity
+              activeOpacity={0.7}
+              style={styles.fab}
+              onPress={canGoBack ? navigation.goBack : () => {}}>
+              <MCIcon name="arrow-left" color={Colors.black} size={24} />
+            </TouchableOpacity>
           ),
-          headerTitle: null,
+          headerTitle: '',
+          headerStyle: { backgroundColor: Colors.background },
+          headerShadowVisible: false,
         }}>
         <Stack.Screen name="auth-phone" component={AuthPhoneNumberScreen} />
         <Stack.Screen name="auth-otp" component={AuthOtpScreen} />
@@ -82,27 +74,21 @@ const StackNavigation = () => {
         <Stack.Screen name="payment-otp" component={PaymentOtpScreen} />
 
         <Stack.Screen name="cancel" component={CancellationScreen} />
-        <Stack.Screen
-          name="cancel-others"
-          component={CancellationOthersScreen}
-        />
+        <Stack.Screen name="cancel-others" component={CancellationOthersScreen} />
       </Stack.Group>
 
       <Stack.Group
         screenOptions={{
           headerTitle: '',
-          headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+          headerTitleAlign: 'center',
+          headerTitleStyle: { fontFamily: 'Montserrat-SemiBold', fontWeight: '600' },
           headerLeft: () => (
             <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack}>
               <MCIcon name="arrow-left" size={24} color={Colors.black} />
             </TouchableOpacity>
           ),
         }}>
-        <Stack.Screen
-          name="about"
-          component={AboutScreen}
-          options={{ headerTitle: 'About' }}
-        />
+        <Stack.Screen name="about" component={AboutScreen} options={{ headerTitle: 'About' }} />
         <Stack.Screen name="payment" component={PaymentMethodScreen} />
         <Stack.Screen
           name="payment-add"
@@ -157,7 +143,7 @@ const StackNavigation = () => {
             headerTitleStyle: {
               fontWeight: '400',
               fontSize: 14,
-              fontFamily: 'Montserrat',
+              fontFamily: 'Montserrat-Regular',
             },
             headerShadowVisible: false,
           }}
@@ -172,20 +158,21 @@ const StackNavigation = () => {
           component={UpdateProfileScreen}
           options={{ headerTitle: 'Update profile' }}
         />
-        <Stack.Screen
-          name="help"
-          component={HelpScreen}
-          options={{ headerTitle: 'Help' }}
-        />
+        <Stack.Screen name="help" component={HelpScreen} options={{ headerTitle: 'Help' }} />
       </Stack.Group>
     </Stack.Navigator>
   );
 };
 
 const styles = StyleSheet.create({
-  header: { backgroundColor: Colors.background },
-  fab: { borderRadius: 8, marginLeft: 10 },
-  title: { fontSize: 18, fontWeight: '600' },
+  fab: {
+    borderRadius: 8,
+    backgroundColor: Colors.primaryContainer,
+    width: 44,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default StackNavigation;

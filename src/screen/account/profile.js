@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Chip, Divider, Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import person from '../../assets/img/person.png';
@@ -50,15 +44,12 @@ const ProfileOverviewScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView
-        contentContainerStyle={styles.container}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={[styles.profileOverview, styles.mb8]}>
           <Image source={person} style={[styles.dp]} />
           <View style={{ marginHorizontal: 16 + 0 }}>
             <Text variant="bodyLarge" style={styles.bold}>
-              Matthew Ola{' '}
-              <MCIcon name="star-circle" color={Colors.secondary} size={18} />
+              Matthew Ola <MCIcon name="star-circle" color={Colors.secondary} size={18} />
             </Text>
             <Text variant="bodyMedium" style={{ color: Colors.grey }}>
               +234 816 770 2086
@@ -74,9 +65,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
             <MCIcon name="pencil" color={Colors.primary} size={24} />
           </TouchableOpacity>
         </View>
-        <Divider
-          style={[{ backgroundColor: Colors.grey }, styles.mt8, styles.mb8]}
-        />
+        <Divider style={[{ backgroundColor: Colors.grey }, styles.mt8, styles.mb8]} />
         <View style={[styles.mt8, styles.mb8]}>
           <View style={[styles.status, styles.mb8]}>
             <Text variant="bodyLarge" style={{ fontWeight: 600 + '' }}>
@@ -91,18 +80,13 @@ const ProfileOverviewScreen = ({ navigation }) => {
               </Text>
             </TouchableOpacity>
           </View>
-          <Text
-            variant="bodyMedium"
-            style={[styles.mb8, { color: Colors.grey }]}>
-            This is about Mary Jane not about the designer. The designer is not
-            a nanny. He will do a very bad job at that. Don’t hire him to nanny
-            work
+          <Text variant="bodyMedium" style={[styles.mb8, { color: Colors.grey }]}>
+            This is about Mary Jane not about the designer. The designer is not a nanny. He will do
+            a very bad job at that. Don’t hire him to nanny work
           </Text>
         </View>
 
-        <Divider
-          style={[{ backgroundColor: Colors.grey }, styles.mt8, styles.mb8]}
-        />
+        <Divider style={[{ backgroundColor: Colors.grey }, styles.mt8, styles.mb8]} />
 
         <View style={styles.mt8}>
           <View style={[styles.status, styles.mb8]}>
@@ -127,9 +111,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <Divider
-          style={[{ backgroundColor: Colors.grey }, styles.mt8, styles.mb8]}
-        />
+        <Divider style={[{ backgroundColor: Colors.grey }, styles.mt8, styles.mb8]} />
 
         <View style={[styles.section, styles.status]}>
           <Text variant="bodyMedium" style={{ color: Colors.grey }}>
@@ -160,9 +142,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
         </View>
 
         <View style={[styles.socials, styles.mt8]}>
-          <Text
-            variant="bodyLarge"
-            style={[{ fontWeight: 600 + '' }, styles.mb8]}>
+          <Text variant="bodyLarge" style={[{ fontWeight: 600 + '' }, styles.mb8]}>
             Connected account
           </Text>
           <View style={styles.mt8}>
@@ -173,11 +153,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
                 textColor={social.textColor}
                 style={styles.socialBtn}
                 icon={({ color }) => (
-                  <MCIcon
-                    name={social.icon}
-                    size={24}
-                    color={social.iconColor || color}
-                  />
+                  <MCIcon name={social.icon} size={24} color={social.iconColor || color} />
                 )}>
                 {social.name}
               </AppButton>
@@ -187,10 +163,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
       </ScrollView>
 
       {/*  */}
-      <ProfileCategoriesModal
-        open={showCategory}
-        onClose={() => setShowCategory(false)}
-      />
+      <ProfileCategoriesModal open={showCategory} onClose={() => setShowCategory(false)} />
       <ProfileAboutModal open={showAbout} onClose={() => setShowAbout(false)} />
     </SafeAreaView>
   );
